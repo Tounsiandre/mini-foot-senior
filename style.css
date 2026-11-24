@@ -580,3 +580,5 @@ html[lang="ar"] .auh{text-transform:none;line-height:1.3}
 .noacct h2{font:900 1.15rem var(--body);margin:0 0 8px}
 .noacct p{margin:0 0 16px;line-height:1.5}
 @media (max-width:560px){.noacct{padding:20px 18px 24px}}
+
+.cfirst{display:inline-block;margin:0 auto 10px;background:#0B0B0B;color:var(--y);font:900 .8rem var(--body);letter-spacing:.06em;text-transform:uppercase;padding:7px 14px;border-radius:999px;transform:rotate(-2deg)}

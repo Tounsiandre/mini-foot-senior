@@ -60,7 +60,7 @@ ty_title:"Merci, votre inscription est envoyée !", ty_p:"Nous vous appelons tr�
 ty_next:"Et maintenant ?", ty1:"Gardez votre téléphone à portée de main", ty1p:"Nous vous appelons pour confirmer votre place.",
 ty2:"On vous donne les détails", ty2p:"Terrain, horaires et organisation de la première séance.", ty3:"Vous jouez", ty3p:"Vous rejoignez votre équipe et vous entrez sur le terrain.",
 ty_home:"Retour à l'accueil", ty_wa:"Nous écrire sur WhatsApp", ty_fb:"Suivre la page Facebook",
-city_title:"Choisissez votre ville", city_sub:"Où voulez-vous jouer ?", city_marrakech:"Marrakech", city_casablanca:"Casablanca", city_tanger:"Tanger", city_agadir:"Agadir",
+city_first:"Pour la première fois au Maroc", city_title:"Choisissez votre ville", city_sub:"Où voulez-vous jouer ?", city_marrakech:"Marrakech", city_casablanca:"Casablanca", city_tanger:"Tanger", city_agadir:"Agadir",
 city_open:"Disponible", city_soon:"Bientôt", city_msg:"Mini Foot Senior n'est pas encore disponible à {city}. Nous arrivons bientôt !", city_int:"Ça m'intéresse", city_thanks:"Merci ! Votre intérêt pour {city} est noté.", city_back:"Choisir Marrakech",
 k_hint:"Touche le ballon !", k_count:"Jongles", k_win:"Bravo ! Réserve ta place"
 },
@@ -124,13 +124,13 @@ ty_title:"شكرا، تم إرسال تسجيلك!", ty_p:"سنتصل بك قر�
 ty_next:"وماذا بعد؟", ty1:"أبق هاتفك قريبا منك", ty1p:"سنتصل بك لتأكيد مكانك.",
 ty2:"نعطيك التفاصيل", ty2p:"الملعب والمواعيد وتنظيم الحصة الأولى.", ty3:"تلعب", ty3p:"تنضم إلى فريقك وتنزل إلى الملعب.",
 ty_home:"العودة إلى الرئيسية", ty_wa:"راسلنا على واتساب", ty_fb:"تابع صفحة فيسبوك",
-city_title:"اختر مدينتك", city_sub:"أين تريد أن تلعب؟", city_marrakech:"مراكش", city_casablanca:"الدار البيضاء", city_tanger:"طنجة", city_agadir:"أكادير",
+city_first:"لأول مرة في المغرب", city_title:"اختر مدينتك", city_sub:"أين تريد أن تلعب؟", city_marrakech:"مراكش", city_casablanca:"الدار البيضاء", city_tanger:"طنجة", city_agadir:"أكادير",
 city_open:"متوفر", city_soon:"قريبا", city_msg:"ميني فوت سينيور غير متوفر حاليا في {city}. سنصل قريبا!", city_int:"يهمني الأمر", city_thanks:"شكرا! تم تسجيل اهتمامك بمدينة {city}.", city_back:"اختر مراكش",
 k_hint:"المس الكرة!", k_count:"لمسات", k_win:"أحسنت! احجز مكانك"
 }};
 
 
-var lang = "fr";
+var lang = "ar";
 try { var saved = localStorage.getItem("mfsm-lang"); if (saved === "ar" || saved === "fr") lang = saved; } catch(e){}
 
 function apply(l){
