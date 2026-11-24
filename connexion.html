@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr" data-title="doc_login">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mini Foot Senior Marrakech</title>
+<meta name="robots" content="noindex">
+<link rel="stylesheet" href="style.css">
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1159056349928933');
+fbq('track', 'PageView');
+</script>
+<!-- End Meta Pixel Code -->
+<link rel="icon" type="image/png" href="favicon.png">
+</head>
+<body data-page="login" class="pg">
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1159056349928933&ev=PageView&noscript=1"/></noscript>
+<header>
+  <div class="wrap bar">
+    <a class="brand" href="index.html"><img src="logo.png" alt=""><span data-i18n="brand"></span></a>
+    <a class="acct" href="connexion.html" data-i18n-aria="nav_login" data-go-skip><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7"/></svg></a>
+    <div class="lang" role="group" aria-label="Langue / اللغة">
+      <button type="button" data-lang="fr" aria-pressed="true">FR</button>
+      <button type="button" data-lang="ar" aria-pressed="false">العربية</button>
+    </div>
+    <a class="btn btn-line backlink" href="index.html" data-i18n="ty_home"></a>
+  </div>
+</header>
+<main>
+  <div class="wrap authw">
+    <aside class="regside">
+      <span class="eyebrow" data-i18n="au_eyebrow"></span>
+      <h1 class="auh" data-i18n="au_side_title"></h1>
+      <ul>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-10"/></svg><span data-i18n="au_b1"></span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-10"/></svg><span data-i18n="au_b2"></span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-10"/></svg><span data-i18n="au_b3"></span></li>
+      </ul>
+      <p class="note" data-i18n="au_note"></p>
+    </aside>
+    <section>
+      <div class="authcard">
+        <div class="tabs" role="tablist">
+          <button type="button" role="tab" id="tabLogin" aria-selected="true" data-tab="login" data-i18n="au_tab_login"></button>
+          <button type="button" role="tab" id="tabReg" aria-selected="false" data-tab="register" data-i18n="au_tab_reg"></button>
+        </div>
+        <form id="fLogin" class="af" novalidate>
+          <h1 class="regh" data-i18n="au_login_title"></h1>
+          <label><span data-i18n="au_email"></span><input type="email" name="email" autocomplete="email" required dir="ltr"></label>
+          <label><span data-i18n="au_password"></span><input type="password" name="password" autocomplete="current-password" required dir="ltr"></label>
+          <p class="aerr" id="eLogin" role="alert" hidden></p>
+          <button class="btn btn-gold" type="submit" data-i18n="au_btn_login"></button>
+        </form>
+        <form id="fReg" class="af" novalidate hidden>
+          <h1 class="regh" data-i18n="au_reg_title"></h1>
+          <label><span data-i18n="au_name"></span><input type="text" name="name" autocomplete="name" required maxlength="80"></label>
+          <label><span data-i18n="au_email"></span><input type="email" name="email" autocomplete="email" required dir="ltr"></label>
+          <label><span data-i18n="au_password"></span><input type="password" name="password" autocomplete="new-password" required minlength="8" dir="ltr"><small data-i18n="au_pw_hint"></small></label>
+          <p class="aerr" id="eReg" role="alert" hidden></p>
+          <button class="btn btn-gold" type="submit" data-i18n="au_btn_reg"></button>
+        </form>
+      </div>
+    </section>
+  </div>
+</main>
+<script src="config.js"></script>
+<script src="i18n.js"></script>
+
+<script src="auth.js"></script>
+<script>apply(lang);</script>
+</body>
+</html>

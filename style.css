@@ -544,3 +544,34 @@ footer .brand{color:#fff}
   .photo{box-shadow:8px 8px 0 #0B0B0B}
   .ccard{box-shadow:8px 8px 0 #0B0B0B}
 }
+
+/* account icon + auth pages */
+.acct{flex:none;width:46px;height:46px;border-radius:50%;border:2.5px solid #0B0B0B;background:#fff;color:#0B0B0B;display:grid;place-items:center;text-decoration:none;box-shadow:3px 3px 0 #0B0B0B;transition:transform .12s,box-shadow .12s}
+.acct:hover{transform:translate(-2px,-2px);box-shadow:5px 5px 0 #0B0B0B}
+.acct svg{width:22px;height:22px}
+.bar nav + .acct{margin-inline-start:0}
+.pg .acct{margin-inline-start:auto}
+.pg .acct + .lang{margin-inline-start:0}
+.authw{display:grid;grid-template-columns:.8fr 1.2fr;gap:36px;align-items:start;padding-block:48px 90px}
+.authw .regside{position:sticky;top:96px}
+.auh{font-size:clamp(2rem,4vw,3rem);font-weight:900;text-transform:uppercase;color:#fff;line-height:1.05;margin:6px 0 22px}
+html[lang="ar"] .auh{text-transform:none;line-height:1.3}
+.authcard{background:#fff;border:4px solid #0B0B0B;box-shadow:12px 12px 0 #0B0B0B;border-radius:24px;overflow:hidden}
+.tabs{display:grid;grid-template-columns:1fr 1fr;border-bottom:4px solid #0B0B0B}
+.tabs button{border:0;cursor:pointer;background:#FFF3B0;color:#0B0B0B;font:900 1.02rem var(--body);padding:18px 10px}
+.tabs button[aria-selected="true"]{background:#0B0B0B;color:var(--y)}
+.tabs button + button{border-inline-start:4px solid #0B0B0B}
+.af{display:grid;gap:18px;padding:30px 30px 34px;background:#fff;border:0;box-shadow:none;border-radius:0}
+.af[hidden]{display:none}
+.af .regh{font-size:2.2rem;margin:0 0 4px}
+.af label{display:grid;gap:7px;font-weight:800;font-size:.95rem;color:#0B0B0B}
+.af input{padding:15px 16px;border-radius:12px;font-size:1rem;width:100%}
+.af small{font-weight:600;color:var(--muted)}
+.af .btn{width:100%;margin-top:6px}
+.af .btn:disabled{opacity:.6;cursor:wait}
+.aerr{margin:0;background:#FFE1E1;border:2.5px solid #B42318;color:#7A1B12;font-weight:800;border-radius:12px;padding:12px 14px}
+.aerr[hidden]{display:none}
+.space h1{font-size:clamp(2.4rem,6vw,4rem)}
+.space .typ{margin-bottom:10px}
+@media (max-width:980px){.authw{grid-template-columns:1fr;padding-block:32px 70px}.authw .regside{position:static}}
+@media (max-width:560px){.acct{width:40px;height:40px}.af{padding:22px 18px 26px}.authcard{box-shadow:8px 8px 0 #0B0B0B}}
