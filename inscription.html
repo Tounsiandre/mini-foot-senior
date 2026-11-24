@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr" data-title="doc_reg">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mini Foot Senior Marrakech</title>
+<meta name="robots" content="noindex">
+<link rel="stylesheet" href="style.css">
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1159056349928933');
+fbq('track', 'PageView');
+</script>
+<!-- End Meta Pixel Code -->
+<link rel="icon" type="image/png" href="favicon.png">
+</head>
+<body data-page="reg" class="pg">
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1159056349928933&ev=PageView&noscript=1"
+/></noscript>
+<header>
+  <div class="wrap bar">
+    <a class="brand" href="index.html"><img src="logo.png" alt=""><span data-i18n="brand"></span></a>
+    <div class="lang" role="group" aria-label="Langue / اللغة">
+      <button type="button" data-lang="fr" aria-pressed="true">FR</button>
+      <button type="button" data-lang="ar" aria-pressed="false">العربية</button>
+    </div>
+    <a class="btn btn-line backlink" href="index.html" data-i18n="reg_back"></a>
+  </div>
+</header>
+<main>
+  <div class="wrap regw">
+    <aside class="regside">
+      <span class="eyebrow" data-i18n="reg_side"></span>
+      <div class="price">290</div>
+      <div class="per"><span data-i18n="cur"></span> <span data-i18n="permonth"></span></div>
+      <ul>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-10"/></svg><span data-i18n="o1"></span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-10"/></svg><span data-i18n="o2"></span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-10"/></svg><span data-i18n="o3"></span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-10"/></svg><span data-i18n="o4"></span></li>
+      </ul>
+      <p class="note" data-i18n="offer_note"></p>
+    </aside>
+    <section>
+      <span class="eyebrow" data-i18n="reg_eyebrow"></span>
+      <h1 class="regh" data-i18n="reg_title"></h1>
+      <p class="regp" data-i18n="reg_sub"></p>
+      <div class="jf" id="jf">
+        <p class="jf-note" id="jfnote" data-i18n="reg_loading"></p>
+        <script type="text/javascript" src="https://form.jotform.com/jsform/263264204415046"></script>
+      </div>
+    </section>
+  </div>
+</main>
+<script>
+// show a message if the form could not load (blocked script, ad blocker, offline)
+(function(){
+  var box=document.getElementById("jf"), note=document.getElementById("jfnote");
+  function check(){ if(box.querySelector("iframe")){ note.style.display="none"; return true; } return false; }
+  if(window.MutationObserver){ new MutationObserver(check).observe(box,{childList:true,subtree:true}); }
+  setTimeout(function(){ if(!check()){ note.setAttribute("data-i18n","reg_fail"); note.textContent=T[lang].reg_fail; note.classList.add("err"); } },6000);
+})();
+</script>
+<script src="config.js"></script>
+<script src="i18n.js"></script>
+<script src="track.js"></script>
+<script src="fx.js"></script>
+<script>apply(lang);</script>
+</body>
+</html>

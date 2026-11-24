@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr" data-title="doc_ty">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mini Foot Senior Marrakech</title>
+<meta name="robots" content="noindex">
+<link rel="stylesheet" href="style.css">
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1159056349928933');
+fbq('track', 'PageView');
+</script>
+<!-- End Meta Pixel Code -->
+<link rel="icon" type="image/png" href="favicon.png">
+</head>
+<body data-page="thanks" class="pg">
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1159056349928933&ev=PageView&noscript=1"
+/></noscript>
+<header>
+  <div class="wrap bar">
+    <a class="brand" href="index.html"><img src="logo.png" alt=""><span data-i18n="brand"></span></a>
+    <div class="lang" role="group" aria-label="Langue / اللغة">
+      <button type="button" data-lang="fr" aria-pressed="true">FR</button>
+      <button type="button" data-lang="ar" aria-pressed="false">العربية</button>
+    </div>
+    <a class="btn btn-line backlink" href="index.html" data-i18n="ty_home"></a>
+  </div>
+</header>
+<main>
+  <div class="wrap thanks">
+    <div class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7"/></svg></div>
+    <h1 data-i18n="ty_title"></h1>
+    <p class="typ" data-i18n="ty_p"></p>
+    <div class="tyball" id="tyball" aria-hidden="true"></div>
+    <h2 class="tynext" data-i18n="ty_next"></h2>
+    <div class="steps tysteps">
+      <div class="step tystep"><h3 data-i18n="ty1"></h3><p data-i18n="ty1p"></p></div>
+      <div class="step tystep"><h3 data-i18n="ty2"></h3><p data-i18n="ty2p"></p></div>
+      <div class="step tystep"><h3 data-i18n="ty3"></h3><p data-i18n="ty3p"></p></div>
+    </div>
+    <div class="cta-row tyacts" id="tyacts">
+      <a class="btn btn-navy" href="index.html" data-i18n="ty_home"></a>
+    </div>
+  </div>
+</main>
+<script>
+window.addEventListener("load",function(){
+  var acts=document.getElementById("tyacts");
+  function add(href,key,contact){ var a=document.createElement("a"); a.className="btn btn-gold"; a.href=href; a.target="_blank"; a.rel="noopener"; a.setAttribute("data-i18n",key); a.setAttribute("data-contact",contact); acts.appendChild(a); }
+  if(CONFIG.whatsapp) add("https://wa.me/"+CONFIG.whatsapp,"ty_wa","whatsapp");
+  if(CONFIG.facebookUrl) add(CONFIG.facebookUrl,"ty_fb","facebook");
+  apply(lang);
+});
+</script>
+<script src="config.js"></script>
+<script src="i18n.js"></script>
+<script src="track.js"></script>
+<script src="fx.js"></script>
+<script>apply(lang);</script>
+</body>
+</html>
