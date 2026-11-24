@@ -8,32 +8,23 @@
       .then(function(r){ return r.json().catch(function(){ return {}; }).then(function(j){ j.status = r.status; return j; }); });
   }
   if (page === "login") {
-    var fl = q("fLogin"), fr = q("fReg"), tl = q("tabLogin"), tr = q("tabReg");
-    function tab(which){
-      var login = which === "login";
-      fl.hidden = !login; fr.hidden = login;
-      tl.setAttribute("aria-selected", String(login)); tr.setAttribute("aria-selected", String(!login));
-      msg(q("eLogin"), ""); msg(q("eReg"), "");
-    }
-    tl.addEventListener("click", function(){ tab("login"); });
-    tr.addEventListener("click", function(){ tab("register"); });
-    if (location.hash === "#creer") tab("register");
+    var fl = q("fLogin");
+    if (window.CONFIG && CONFIG.whatsapp) { var ac = q("adminContact"); if (ac) { ac.href = "https://wa.me/" + CONFIG.whatsapp; ac.target = "_blank"; ac.rel = "noopener"; } }
     function submit(form, url, errEl){
       form.addEventListener("submit", function(e){
         e.preventDefault(); msg(errEl, "");
         var btn = form.querySelector("button[type=submit]"); btn.disabled = true;
         var d = {}; new FormData(form).forEach(function(v, k){ d[k] = v; });
         post(url, d).then(function(j){
-          if (j.ok) { if (window.mfCustom) mfCustom(url.indexOf("register") > -1 ? "AccountCreated" : "Login", {}); location.href = "espace.html"; return; }
+          if (j.ok) { if (window.mfCustom) mfCustom("Login", {}); location.href = "espace.html"; return; }
           btn.disabled = false; msg(errEl, j.error || "generic");
         }).catch(function(){ btn.disabled = false; msg(errEl, "network"); });
       });
     }
     submit(fl, "/api/login", q("eLogin"));
-    submit(fr, "/api/register", q("eReg"));
     // re-translate an error already on screen when the language changes
     var old = window.MF_after;
-    window.MF_after = function(l){ if (old) old(l); [q("eLogin"), q("eReg")].forEach(function(el){ var k = el.getAttribute("data-k"); if (!el.hidden && k) el.textContent = T[l]["er_" + k] || T[l].er_generic; }); };
+    window.MF_after = function(l){ if (old) old(l); [q("eLogin")].forEach(function(el){ var k = el.getAttribute("data-k"); if (!el.hidden && k) el.textContent = T[l]["er_" + k] || T[l].er_generic; }); };
   }
   if (page === "space") {
     var hello = q("spHello");

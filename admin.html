@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Administration — Mini Foot Senior</title>
+<meta name="robots" content="noindex,nofollow">
+<link rel="stylesheet" href="style.css">
+<link rel="icon" type="image/png" href="favicon.png">
+</head>
+<body class="pg">
+<header><div class="wrap bar"><a class="brand" href="index.html"><img src="logo.png" alt=""><span>Mini Foot Senior</span></a></div></header>
+<main>
+  <div class="wrap" style="max-width:560px;padding-block:40px">
+    <div class="authcard">
+      <form id="fAdm" class="af" novalidate>
+        <h1 class="regh">Créer un compte membre</h1>
+        <label><span>Clé administrateur</span><input type="password" name="key" autocomplete="off" required dir="ltr"></label>
+        <label><span>Nom et prénom du membre</span><input type="text" name="name" required maxlength="80"></label>
+        <label><span>E-mail du membre</span><input type="email" name="email" required dir="ltr"></label>
+        <label><span>Mot de passe (8 caractères min.)</span><input type="text" name="password" id="pw" required minlength="8" dir="ltr" autocomplete="off"></label>
+        <button class="btn btn-line" type="button" id="gen">Générer un mot de passe</button>
+        <p class="aerr" id="aMsg" role="alert" hidden></p>
+        <button class="btn btn-gold" type="submit">Créer le compte</button>
+      </form>
+      <div class="noacct" id="done" hidden>
+        <h2>Compte créé</h2>
+        <p>Message à envoyer au membre :</p>
+        <textarea id="msg" rows="6" readonly style="width:100%;font:inherit;padding:10px;border:3px solid #0B0B0B;border-radius:12px"></textarea>
+        <p style="margin-top:12px"><button class="btn btn-line" type="button" id="cp">Copier le message</button></p>
+      </div>
+    </div>
+  </div>
+</main>
+<script>
+(function(){
+  var f=document.getElementById("fAdm"), m=document.getElementById("aMsg"), pw=document.getElementById("pw");
+  function show(t){ m.hidden=!t; m.textContent=t||""; }
+  document.getElementById("gen").onclick=function(){
+    var c="ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnpqrstuvwxyz23456789", a=new Uint32Array(10), s="";
+    crypto.getRandomValues(a); for(var i=0;i<a.length;i++) s+=c[a[i]%c.length]; pw.value=s;
+  };
+  f.addEventListener("submit",function(e){
+    e.preventDefault(); show("");
+    var d=new FormData(f), body={name:d.get("name"),email:d.get("email"),password:d.get("password")};
+    fetch("/api/admin-create",{method:"POST",credentials:"same-origin",headers:{"Content-Type":"application/json","X-Admin-Key":d.get("key")},body:JSON.stringify(body)})
+    .then(function(r){return r.json().catch(function(){return {};}).then(function(j){j.s=r.status;return j;});})
+    .then(function(j){
+      if(j.ok){
+        var link=location.origin+"/connexion.html";
+        document.getElementById("msg").value="Bonjour "+body.name.split(" ")[0]+",\nVotre accès Mini Foot Senior est prêt.\nConnexion : "+link+"\nE-mail : "+body.email+"\nMot de passe : "+body.password;
+        document.getElementById("done").hidden=false; f.reset(); return;
+      }
+      show(j.error==="forbidden"?"Clé administrateur incorrecte.":j.error==="email_taken"?"Un compte existe déjà avec cet e-mail.":j.error==="too_many"?"Trop de tentatives, réessayez plus tard.":j.error==="invalid"?"Vérifiez les champs (e-mail valide, mot de passe 8 caractères min.).":"Erreur, réessayez.");
+    }).catch(function(){show("Connexion impossible.");});
+  });
+  document.getElementById("cp").onclick=function(){var t=document.getElementById("msg");t.select();document.execCommand("copy");this.textContent="Copié !";};
+})();
+</script>
+</body>
+</html>

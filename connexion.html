@@ -49,10 +49,6 @@ fbq('track', 'PageView');
     </aside>
     <section>
       <div class="authcard">
-        <div class="tabs" role="tablist">
-          <button type="button" role="tab" id="tabLogin" aria-selected="true" data-tab="login" data-i18n="au_tab_login"></button>
-          <button type="button" role="tab" id="tabReg" aria-selected="false" data-tab="register" data-i18n="au_tab_reg"></button>
-        </div>
         <form id="fLogin" class="af" novalidate>
           <h1 class="regh" data-i18n="au_login_title"></h1>
           <label><span data-i18n="au_email"></span><input type="email" name="email" autocomplete="email" required dir="ltr"></label>
@@ -60,14 +56,11 @@ fbq('track', 'PageView');
           <p class="aerr" id="eLogin" role="alert" hidden></p>
           <button class="btn btn-gold" type="submit" data-i18n="au_btn_login"></button>
         </form>
-        <form id="fReg" class="af" novalidate hidden>
-          <h1 class="regh" data-i18n="au_reg_title"></h1>
-          <label><span data-i18n="au_name"></span><input type="text" name="name" autocomplete="name" required maxlength="80"></label>
-          <label><span data-i18n="au_email"></span><input type="email" name="email" autocomplete="email" required dir="ltr"></label>
-          <label><span data-i18n="au_password"></span><input type="password" name="password" autocomplete="new-password" required minlength="8" dir="ltr"><small data-i18n="au_pw_hint"></small></label>
-          <p class="aerr" id="eReg" role="alert" hidden></p>
-          <button class="btn btn-gold" type="submit" data-i18n="au_btn_reg"></button>
-        </form>
+        <div class="noacct">
+          <h2 data-i18n="au_noacct_t"></h2>
+          <p data-i18n="au_noacct"></p>
+          <a class="btn btn-line" id="adminContact" href="inscription.html" data-i18n="au_contact"></a>
+        </div>
       </div>
     </section>
   </div>
